@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="amal_form_view">
+            <field name="name">amal.form</field>
+            <field name="model">mutabaah.mutabaah</field>
+            <field name="arch" type="xml">
+                <form string="Daftar Amal Form">
+                    <sheet>
+                        <group>
+                            <field name="tanggal"/>
+                            <field name="shubuh"/>
+                            <field name="zuhur"/>
+                            <field name="ashar"/>
+                            <field name="maghrib"/>
+                            <field name="isya"/>
+                            <field name="dhuha"/>
+                            <field name="tahajjud"/>
+                            <field name="shaum"/>
+                            <field name="tilawah"/>
+                            <field name="dzikirpagi"/>
+                            <field name="dzikirsore"/>
+                            <field name="MQ"/>
+                            <field name="bina"/>
+                            <field name="kajianpagi" attrs="{'invisible':[('MQ', '!=', True)]}" />
+                            <field name="infaq"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="amal_search_view">
+            <field name="name">amal.search</field>
+            <field name="model">mutabaah.mutabaah</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tanggal"/>
+                </search>
+            </field>
+        </record>
+
+        <!--<record model="ir.ui.view" id="mutabaah_amal_graph_view">
+            <field name="name">mutabaah.amal.graph</field>
+            <field name="model">mutabaah.mutabaah</field>
+            <field name="arch" type="xml">
+                <graph string="Shubuh">
+                    <field name="tanggal"/>
+                    <field name="amal_count" type="measure"/>
+                </graph>
+            </field>
+
+        </record> -->
+        <!-- window action -->
+        <!--
+            The following tag is an action definition for a "window action",
+            that is an action opening a view or a set of views
+        -->
+        <record model="ir.actions.act_window" id="amal_list_action">
+            <field name="name">Mutabaah</field>
+            <field name="res_model">mutabaah.mutabaah</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create the first course
+                </p>
+            </field>
+        </record>
+<!-- top level menu: no parent -->
+        <menuitem id="main_mutabaah_menu" name="Mutabaah"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="mutabaah_menu" name="Mutabaah"
+                  parent="main_mutabaah_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="amal" name="Daftar" parent="mutabaah_menu"
+                  action="amal_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
+    </data>
+</openerp>
