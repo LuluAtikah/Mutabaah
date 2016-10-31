@@ -25,7 +25,7 @@ class mutabaah(models.Model):
 
      #amal_count = fields.Integer(string="Grafik Amal", compute='_get_amal_count', store=True)
 
-     #@api.depends('shubuh', 'zuhur', 'tilawah')
+     #@api.depends('shubuh')
      #def _get_amal_count(self):
-          #for r in self:
-               #r.amal_count = len(r.shubuh)
+         # for r in self:
+#  r.amal_count = len(r.shubuh)
