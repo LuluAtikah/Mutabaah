@@ -23,9 +23,9 @@ class mutabaah(models.Model):
      zuhur = fields.Boolean(string="Sholat Zuhur Berjamaah", default=False)
      shubuh = fields.Boolean(string="Sholat Shubuh Berjamaah", default=False)
 
-     amal_count = fields.Integer(string="Grafik Amal", compute='_get_amal_count', store=True)
+     #amal_count = fields.Integer(string="Grafik Amal", compute='_get_amal_count', store=True)
 
-     @api.depends('shubuh', 'zuhur', 'tilawah')
-     def _get_amal_count(self):
-          for r in self:
-               r.amal_count = len(r.shubuh)
+     #@api.depends('shubuh', 'zuhur', 'tilawah')
+     #def _get_amal_count(self):
+          #for r in self:
+               #r.amal_count = len(r.shubuh)
