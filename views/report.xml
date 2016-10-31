@@ -7,7 +7,7 @@
         model="mutabaah.mutabaah"
         string="Amal Report"
         name="mutabaah.report_view"
-        file="mutabaah.report_session"
+        file="mutabaah.report"
         report_type="qweb-pdf"
 <template id="report_document">
     <t t-call="report.external_layout">
