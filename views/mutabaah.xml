@@ -23,7 +23,7 @@
                             <field name="dzikirsore"/>
                             <field name="MQ"/>
                             <field name="bina"/>
-                            <field name="kajianpagi" attrs="{'invisible':[('MQ', '!=', True)]}" />
+                            <field name="kajianpagi" attrs="{'invisible':[('MQ', '!=', True)]}"  /> #sintax datetime
                             <field name="infaq"/>
                         </group>
                     </sheet>
@@ -41,17 +41,20 @@
             </field>
         </record>
 
-        <!--<record model="ir.ui.view" id="mutabaah_amal_graph_view">
+        <record model="ir.ui.view" id="mutabaah_amal_graph_view">
             <field name="name">mutabaah.amal.graph</field>
             <field name="model">mutabaah.mutabaah</field>
             <field name="arch" type="xml">
-                <graph string="Shubuh">
+                <graph string="Grafik Amal">
                     <field name="tanggal"/>
+                    <field name="shubuh" type="measure"/>
+                    <field name="zuhur" type="measure"/>
+                    <field name="tilawah" type="measure"/>
                     <field name="amal_count" type="measure"/>
                 </graph>
             </field>
 
-        </record> -->
+        </record>
         <!-- window action -->
         <!--
             The following tag is an action definition for a "window action",
