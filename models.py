@@ -22,3 +22,9 @@ class mutabaah(models.Model):
      itikaf = fields.Boolean (string="I'tikaf", default= False,required=True)
      zuhur = fields.Boolean(string="Sholat Zuhur Berjamaah", default=False)
      shubuh = fields.Boolean(string="Sholat Shubuh Berjamaah", default=False)
+
+     graph = fields.Integer(string="")
+
+     @api.onchange('shubuh', 'ashar', 'isya', 'maghrib', 'tilawah')
+     def _onchange_graph(self):
+         self.graph = self.shubuh + self. ashar + self.isya + self.maghrib + self.tilawah
