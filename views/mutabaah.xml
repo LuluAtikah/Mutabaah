@@ -50,7 +50,7 @@
                     <field name="shubuh" type="measure"/>
                     <field name="zuhur" type="measure"/>
                     <field name="tilawah" type="measure"/>
-                    <field name="amal_count" type="measure"/>
+                    <!--<field name="amal_count" type="measure"/> -->
                 </graph>
             </field>
 
