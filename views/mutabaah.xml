@@ -47,10 +47,10 @@
             <field name="arch" type="xml">
                 <graph string="Grafik Amal">
                     <field name="tanggal"/>
-                    <field name="shubuh" type="measure"/>
-                    <field name="zuhur" type="measure"/>
+                    <field name="graph" type="measure"/>
+                    <!--<field name="zuhur" type="measure"/>
                     <field name="tilawah" type="measure"/>
-                    <!--<field name="amal_count" type="measure"/> -->
+                    <field name="amal_count" type="measure"/> -->
                 </graph>
             </field>
 
