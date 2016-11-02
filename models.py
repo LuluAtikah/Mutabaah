@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 import datetime
-from openerp import models, fields, api
+from openerp import models, fields, api, tools
 
 class mutabaah(models.Model):
      _name = 'mutabaah.mutabaah'
 
-     tanggal = fields.Date(required=True)
+     name = fields.Date(required=True)
      ashar = fields.Boolean (string="Sholat Ashar Berjamaah", default= False)
      maghrib = fields.Boolean (string="Sholat Maghrib Berjamaah", default= False)
      isya = fields.Boolean (string="Sholat Isya Berjamaah", default= False)
@@ -25,6 +25,13 @@ class mutabaah(models.Model):
 
      graph = fields.Integer(string="")
 
-     @api.onchange('shubuh', 'ashar', 'isya', 'maghrib', 'tilawah')
-     def _onchange_graph(self):
-         self.graph = self.shubuh + self. ashar + self.isya + self.maghrib + self.tilawah
+
+     #@api.onchange('shubuh', 'ashar', 'isya', 'maghrib', 'tilawah')
+     #def _onchange_graph(self):
+          #countSubuh=0
+         #z = self.browse()
+         #for y in z :
+              #if y.shubuh:
+                   #countSubuh+= 1
+
+              #= self.shubuh + self. ashar + self.isya + self.maghrib + self.tilawah
