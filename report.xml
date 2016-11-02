@@ -1,0 +1,26 @@
+<openerp>
+<data>
+    <report
+        id="report_amal"
+        model="mutabaah.mutabaah"
+        string="Amal Report"
+        name="mutabaah.report_amal_view"
+        file="mutabaah.report_amal"
+        report_type="qweb-pdf" />
+
+    <template id="report_amal_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <p>Tanggal <span t-field="doc.tanggal"/></p>
+                        <h3>Amal:</h3>
+                        <p>This object's name is <span t-field="o.name"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</data>
+</openerp>
